@@ -1,6 +1,8 @@
-package odi_série5;
+package ch.hearc.ig.odi.customeraccount.application;
 
 
+import ch.hearc.ig.odi.customeraccount.business.Account;
+import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 
 /*
@@ -15,9 +17,17 @@ import ch.hearc.ig.odi.customeraccount.business.Customer;
 public class Application {
 
     public static void main(String[] args) {
-        Customer customer = new Customer(1, "Florane", "Sapin");
-        customer.addAccount("23566", "BCF", 1.2);
-        customer.addAccount("23567", "BCF2", 1.2);
+       Bank bank = new Bank(1, "BCF");
+       
+       //bank.addCustomer(number, null, null);
+        
+       Customer customer = new Customer(1, "Florane", "Sapin");
+        
+        Account account1 = new Account("23566", "BCF", 1.2, customer);
+        Account account2 = new Account ("23567", "BCF2", 1.2, customer);
+        
+        customer.addAccount(account1);
+        customer.addAccount(account2);
         
         System.out.println("Balance on " + customer.getAccountByNumber("23566").getName() + " " + customer.getAccountByNumber("23566").getBalance());
 

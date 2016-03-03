@@ -55,11 +55,16 @@ public class Customer {
      * @param name
      * @param rate
      */
+    /*ancien code
     public void addAccount(String number, String name, double rate) {
-        Account account = new Account(number, name, rate, this);
-        this.accounts.add(account);
+       // Account account = new Account(number, name, rate, this);
+        //this.accounts.add(account);
 
-    }
+    }*/
+    
+     public void addAccount(Account account) {
+        this.accounts.add(account);
+     }
 
     /**
      *
