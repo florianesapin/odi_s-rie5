@@ -18,6 +18,7 @@ public class Application {
         Customer customer = new Customer(1, "Florane", "Sapin");
         customer.addAccount("23566", "BCF", 1.2);
         customer.addAccount("23567", "BCF2", 1.2);
+        
         System.out.println("Balance on " + customer.getAccountByNumber("23566").getName() + " " + customer.getAccountByNumber("23566").getBalance());
 
         customer.getAccountByNumber("23566").credit(300);
